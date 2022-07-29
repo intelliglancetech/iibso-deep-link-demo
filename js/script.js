@@ -8,24 +8,23 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
     document.addEventListener("DOMContentLoaded", function (event) {
-      var links = document.querySelectorAll("a");
-      var baseUri = "exp://wg-qka.notbrent.app.exp.direct";
-
+      let links = document.querySelectorAll("a");
+      let baseUri = "exp://wg-qka.notbrent.app.exp.direct/productDetail";
+      
       // Take the uri from the params
-      var qs = decodeURIComponent(document.location.search);
-      if (qs) {
-        baseUri = qs.split("?linkingUri=")[1];
-      }
+      let qs = decodeURIComponent(document.location.search);
+      let purpose = qs.split("?purpose")[1];
+      let productId = qs.split("?purpose")[2];
 
       // Update the link urls
-      // for (var i = 0; i < links.length; ++i) {
+      // for (let i = 0; i < links.length; ++i) {
       //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
       //   links[i].textContent = links[i].href
       // }
 
-      var redirectInterval = setInterval(function () {
-        var countdown = document.querySelector(".countdown");
-        var t = parseInt(countdown.innerText, 10);
+      let redirectInterval = setInterval(function () {
+        let countdown = document.querySelector(".countdown");
+        let t = parseInt(countdown.innerText, 10);
         t -= 1;
 
         countdown.innerText = t;
@@ -34,8 +33,10 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
           clearInterval(redirectInterval);
           window.location.href =
             baseUri +
-            "message=" +
-            encodeURIComponent("Redirected automatically by timer");
+            "purpose" +
+            encodeURIComponent(purpose);
+            "productId" +
+            encodeURIComponent(productId);
         }
       }, 1000);
     });
