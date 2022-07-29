@@ -42,8 +42,8 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
   } else {
     window.location.href = ua.os.family.includes("Windows")
       ? GOOGLE_PLAY_STORE_LINK
-      : ua.os.family.includes("MAC")
+      : ua.os.family.includes("Mac")
       ? IOS_APP_STORE_LINK
-      : window.location.origin;
+      : GOOGLE_PLAY_STORE_LINK;
   }
 })(window, document);
