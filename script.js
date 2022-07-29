@@ -4,7 +4,7 @@ const IOS_APP_STORE_LINK = "https://apps.apple.com/us/app/foodpanda-food-deliver
 window.onload = (function handleUserRedirection (window={}, document={}) {
   let ua = detect.parse(navigator.userAgent);
   
-  document.write(ua.os.source);
+  document.write(ua.source);
   
 
 })(window, document);
