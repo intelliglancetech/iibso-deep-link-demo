@@ -36,21 +36,16 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
           window.location.href = `${baseUri}`
           // ?message=${encodeURIComponent("Redirected automatically by timer")} 
         }
+
+        let redirectIntervalCheck = setInterval(() => {
+          if (!redirectInterval) {
+            clearInterval(redirectIntervalCheck);
+            if(ua.os.family == "Android") window.location.href = GOOGLE_PLAY_STORE_LINK;
+            if(ua.os.family == "IOS") window.location.href = IOS_APP_STORE_LINK;
+          }
+        }, 1000);
       }, 1000);
 
-      let countdown = document.querySelector(".countdown");
-      let redirectIntervalCheck = setInterval(function () {
-        // let t = parseInt(countdown.innerText, 10)+1;
-        // t -= 1;
-
-        // countdown.innerText = t;
-
-        if (!redirectInterval) {
-          clearInterval(redirectIntervalCheck);
-          if(ua.os.family == "Android") window.location.href = GOOGLE_PLAY_STORE_LINK;
-          if(ua.os.family == "IOS") window.location.href = IOS_APP_STORE_LINK;
-        }
-      }, 1000);
     });
   } else {
     window.location.href = ua.os.family.includes("Windows")
