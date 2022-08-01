@@ -4,6 +4,8 @@ const IOS_APP_STORE_LINK =
   "https://apps.apple.com/us/app/foodpanda-food-delivery/id758103884";
 
 window.onload = ((window = {}, document = {}) => {
+
+  
   let ua = detect.parse(navigator.userAgent);
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
@@ -11,7 +13,7 @@ window.onload = ((window = {}, document = {}) => {
       let links = document.querySelectorAll("a");
       // let baseUri = "exp://wg-qka.notbrent.app.exp.direct";
       let baseUri;
-
+      
       // Take the uri from the params
       let qs = decodeURIComponent(document.location.search);
       if (qs) {
@@ -20,9 +22,9 @@ window.onload = ((window = {}, document = {}) => {
 
       // Update the link urls
       // for (let i = 0; i < links.length; ++i) {
-      //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
-      //   links[i].textContent = links[i].href
-      // }
+        //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
+        //   links[i].textContent = links[i].href
+        // }
       let btnAction = document.createElement("button");
         btnAction.textContent = "Proceed to the product";
         btnAction.style.backgroundColor="#3B619E";
@@ -30,11 +32,13 @@ window.onload = ((window = {}, document = {}) => {
         btnAction.style.padding="6px";
         btnAction.style.borderRadius="6px";
         btnAction.style.display="none";
+        btnAction.setAttribute("id")="link";
         btnAction.onclick=()=>{
           window.location.href = `${baseUri}`
         }
-        document.querySelector("p").appendChild(btnAction).click();
-        window.close();
+        document.querySelector("p").appendChild(btnAction);
+        document.getElementById('link').click();
+        window.close('','_parent','');
 
       let redirectInterval = setInterval(() => {
         let countdown = document.querySelector(".countdown");
