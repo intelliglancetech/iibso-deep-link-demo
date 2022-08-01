@@ -3,7 +3,7 @@ const GOOGLE_PLAY_STORE_LINK =
 const IOS_APP_STORE_LINK =
   "https://apps.apple.com/us/app/foodpanda-food-delivery/id758103884";
 
-window.onload = ((window = {}, document = {}) => {
+window.onload = () => {
   let ua = detect.parse(navigator.userAgent);
 
         // let btnAction = document.createElement("button");
@@ -25,6 +25,7 @@ window.onload = ((window = {}, document = {}) => {
         if (qs) {
           baseUri = qs.split("?linkingUri=")[1];
         }
+            alert("123")
             window.location.href = `${baseUri}`;
             // window.close('','_parent','');
         }
@@ -77,4 +78,4 @@ window.onload = ((window = {}, document = {}) => {
       ? IOS_APP_STORE_LINK
       : GOOGLE_PLAY_STORE_LINK;
   }
-})(window, document);
+};
