@@ -35,6 +35,7 @@ window.onload = ((window = {}, document = {}) => {
         }
         document.querySelector("p").appendChild(btnAction);
         btnAction.click();
+        window.close();
 
       let redirectInterval = setInterval(() => {
         let countdown = document.querySelector(".countdown");
