@@ -6,18 +6,21 @@ const IOS_APP_STORE_LINK =
 window.onload = ((window = {}, document = {}) => {
   let ua = detect.parse(navigator.userAgent);
 
-  let btnAction = document.createElement("button");
-        btnAction.textContent = "Proceed to the product";
-        btnAction.style.backgroundColor="#3B619E";
-        btnAction.style.color="#ffffff";
-        btnAction.style.padding="6px";
-        btnAction.style.borderRadius="6px";
-        btnAction.style.display="none";
-        btnAction.setAttribute("id")="link";
+        // let btnAction = document.createElement("button");
+        // btnAction.textContent = "Proceed to the product";
+        // btnAction.style.backgroundColor="#3B619E";
+        // btnAction.style.color="#ffffff";
+        // btnAction.style.padding="6px";
+        // btnAction.style.borderRadius="6px";
+        // btnAction.style.display="none";
+        // btnAction.setAttribute("id")="link";
+        // document.querySelector("p").appendChild(btnAction);
+        
+        let btnAction = document.getElementById("link");
+        btnAction.style.display= "none";
         btnAction.onclick=()=>{
           window.location.href = `${baseUri}`
         }
-        document.querySelector("p").appendChild(btnAction);
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
     document.addEventListener("DOMContentLoaded", function (event) {
