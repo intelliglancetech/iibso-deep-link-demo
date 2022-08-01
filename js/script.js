@@ -15,7 +15,7 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
       // Take the uri from the params
       var qs = decodeURIComponent(document.location.search);
       if (qs) {
-        baseUri = qs.split("?ref=")[1];
+        baseUri = qs.split("?link")[1];
       }
 
       // Update the link urls
