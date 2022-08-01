@@ -38,18 +38,18 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
         }
       }, 1000);
 
-      let redirectIntervalCheck = setInterval(() => {
+      let redirectIntervalCheck = setTimeout(() => {
         if (!redirectInterval) {
           if(ua.os.family == "Android") {
             window.location.href = GOOGLE_PLAY_STORE_LINK;
-            clearInterval(redirectIntervalCheck);
+            clearTimeout(redirectIntervalCheck);
           }
           if(ua.os.family == "IOS") {
             window.location.href = IOS_APP_STORE_LINK;
-            clearInterval(redirectIntervalCheck);
+            clearTimeout(redirectIntervalCheck);
           }
         }
-      }, 2000);
+      }, 1500);
 
     });
   } else {
