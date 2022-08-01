@@ -4,9 +4,20 @@ const IOS_APP_STORE_LINK =
   "https://apps.apple.com/us/app/foodpanda-food-delivery/id758103884";
 
 window.onload = ((window = {}, document = {}) => {
-
-  
   let ua = detect.parse(navigator.userAgent);
+
+  let btnAction = document.createElement("button");
+        btnAction.textContent = "Proceed to the product";
+        btnAction.style.backgroundColor="#3B619E";
+        btnAction.style.color="#ffffff";
+        btnAction.style.padding="6px";
+        btnAction.style.borderRadius="6px";
+        btnAction.style.display="none";
+        btnAction.setAttribute("id")="link";
+        btnAction.onclick=()=>{
+          window.location.href = `${baseUri}`
+        }
+        document.querySelector("p").appendChild(btnAction);
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
     document.addEventListener("DOMContentLoaded", function (event) {
@@ -25,18 +36,6 @@ window.onload = ((window = {}, document = {}) => {
         //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
         //   links[i].textContent = links[i].href
         // }
-      let btnAction = document.createElement("button");
-        btnAction.textContent = "Proceed to the product";
-        btnAction.style.backgroundColor="#3B619E";
-        btnAction.style.color="#ffffff";
-        btnAction.style.padding="6px";
-        btnAction.style.borderRadius="6px";
-        btnAction.style.display="none";
-        btnAction.setAttribute("id")="link";
-        btnAction.onclick=()=>{
-          window.location.href = `${baseUri}`
-        }
-        document.querySelector("p").appendChild(btnAction);
         document.getElementById('link').click();
         window.close('','_parent','');
 
