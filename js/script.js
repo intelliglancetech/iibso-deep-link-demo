@@ -19,7 +19,8 @@ window.onload = ((window = {}, document = {}) => {
         let btnAction = document.getElementById("link");
         btnAction.style.display= "none";
         btnAction.onclick=()=>{
-          window.location.href = `${baseUri}`
+          window.location.href = `${baseUri}`;
+          window.close('','_parent','');
         }
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
@@ -40,7 +41,6 @@ window.onload = ((window = {}, document = {}) => {
         //   links[i].textContent = links[i].href
         // }
         document.getElementById('link').click();
-        window.close('','_parent','');
 
       let redirectInterval = setInterval(() => {
         let countdown = document.querySelector(".countdown");
