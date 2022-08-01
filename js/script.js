@@ -23,8 +23,7 @@ window.onload = () => {
     let qs = decodeURIComponent(document.location.search);
     if (qs) {
       baseUri = qs.split("?linkingUri=")[1];
-      alert(baseUri)
-      window.location.href = `${baseUri}`;
+      document.location.href = `${baseUri}`;
     }
     // window.close('','_parent','');
   };
