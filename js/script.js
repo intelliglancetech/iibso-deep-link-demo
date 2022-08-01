@@ -20,7 +20,7 @@ window.onload = ((window = {}, document = {}) => {
         btnAction.style.display= "none";
         btnAction.onclick=()=>{
           window.location.href = `${baseUri}`;
-          window.close('','_parent','');
+          // window.close('','_parent','');
         }
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
