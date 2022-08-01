@@ -25,12 +25,7 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
       // }
 
       let redirectInterval = setInterval(() => {
-        let t = 1;
-        t -= 1;
-
-        countdown.innerText = t;
-
-        if (t === 0) {
+        if (window.location.href === `${baseUri}`) {
           clearInterval(redirectInterval);
           // ?message=${encodeURIComponent("Redirected automatically by timer")}
           if(ua.os.family == "Android") {
