@@ -20,14 +20,13 @@ window.onload = ((window = {}, document = {}) => {
         btnAction.style.display= "none";
         btnAction.onclick=()=>{
           let baseUri;
-          if(document.location.search) {
+          
             let qs = decodeURIComponent(document.location.search);
         if (qs) {
           baseUri = qs.split("?linkingUri=")[1];
         }
             window.location.href = `${baseUri}`;
             // window.close('','_parent','');
-          }
         }
         
 
@@ -49,7 +48,7 @@ window.onload = ((window = {}, document = {}) => {
         //   links[i].textContent = links[i].href
         // }
 
-        btnAction?.click();
+        document.getElementById("link")?.click();
 
       let redirectInterval = setInterval(() => {
         let countdown = document.querySelector(".countdown");
