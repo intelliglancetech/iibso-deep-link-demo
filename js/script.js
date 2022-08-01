@@ -22,9 +22,10 @@ window.onload = ((window = {}, document = {}) => {
           window.location.href = `${baseUri}`;
           // window.close('','_parent','');
         }
+        btnAction?.click();
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
-    document.addEventListener("load", (event) => {
+    document.addEventListener("DOMContentLoaded", (event) => {
       let links = document.querySelectorAll("a");
       // let baseUri = "exp://wg-qka.notbrent.app.exp.direct";
       let baseUri;
@@ -40,8 +41,6 @@ window.onload = ((window = {}, document = {}) => {
         //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
         //   links[i].textContent = links[i].href
         // }
-        let link = document.getElementById('link')
-        link.click();
 
       let redirectInterval = setInterval(() => {
         let countdown = document.querySelector(".countdown");
@@ -63,11 +62,12 @@ window.onload = ((window = {}, document = {}) => {
       }, 1000);
 
     });
-  } else {
-    window.location.href = ua.os.family.includes("Windows")
-      ? GOOGLE_PLAY_STORE_LINK
-      : ua.os.family.includes("Mac")
-      ? IOS_APP_STORE_LINK
-      : GOOGLE_PLAY_STORE_LINK;
-  }
+  } 
+  // else {
+  //   window.location.href = ua.os.family.includes("Windows")
+  //     ? GOOGLE_PLAY_STORE_LINK
+  //     : ua.os.family.includes("Mac")
+  //     ? IOS_APP_STORE_LINK
+  //     : GOOGLE_PLAY_STORE_LINK;
+  // }
 })(window, document);
