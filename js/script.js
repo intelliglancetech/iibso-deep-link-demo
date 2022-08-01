@@ -20,32 +20,36 @@ window.onload = ((window = {}, document = {}) => {
         btnAction.style.display= "none";
         btnAction.onclick=()=>{
           let baseUri;
-          let qs = decodeURIComponent(document.location.search);
-      if (qs) {
-        baseUri = qs.split("?linkingUri=")[1];
-      }
-          window.location.href = `${baseUri}`;
-          // window.close('','_parent','');
+          if(document.location.search) {
+            let qs = decodeURIComponent(document.location.search);
+        if (qs) {
+          baseUri = qs.split("?linkingUri=")[1];
         }
-        btnAction?.click();
+            window.location.href = `${baseUri}`;
+            // window.close('','_parent','');
+          }
+        }
+        
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
     document.addEventListener("DOMContentLoaded", (event) => {
-      let links = document.querySelectorAll("a");
+      // let links = document.querySelectorAll("a");
       // let baseUri = "exp://wg-qka.notbrent.app.exp.direct";
-      let baseUri;
+      // let baseUri;
       
       // Take the uri from the params
-      let qs = decodeURIComponent(document.location.search);
-      if (qs) {
-        baseUri = qs.split("?linkingUri=")[1];
-      }
+      // let qs = decodeURIComponent(document.location.search);
+      // if (qs) {
+      //   baseUri = qs.split("?linkingUri=")[1];
+      // }
 
       // Update the link urls
       // for (let i = 0; i < links.length; ++i) {
         //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
         //   links[i].textContent = links[i].href
         // }
+
+        btnAction?.click();
 
       let redirectInterval = setInterval(() => {
         let countdown = document.querySelector(".countdown");
