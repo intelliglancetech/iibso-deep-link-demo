@@ -41,8 +41,16 @@ window.onload = ((window = {}, document = {}) => {
             window.location.href = IOS_APP_STORE_LINK;
           } 
         }else{
-          // window.location.href = `${baseUri}`
-          window.location.replace(`${baseUri}`);
+          let btnAction = document.createElement("button");
+          btnAction.textContent = "Proceed to the product";
+          btnAction.style.backgroundColor="#3B619E";
+          btnAction.style.color="#ffffff";
+          btnAction.style.padding="6px";
+          btnAction.style.borderRadius="6px";
+          btnAction.onclick=()=>{
+            window.location.href = `${baseUri}`
+          }
+          document.querySelector(".countdown").appendChild(btnAction)
         }
       }, 1000);
 
