@@ -29,12 +29,11 @@ window.onload = ((window = {}, document = {}) => {
         btnAction.style.color="#ffffff";
         btnAction.style.padding="6px";
         btnAction.style.borderRadius="6px";
-        btnAction.style.display="hidden";
+        btnAction.style.display="none";
         btnAction.onclick=()=>{
           window.location.href = `${baseUri}`
         }
-        document.querySelector("p").appendChild(btnAction);
-        btnAction.click();
+        document.querySelector("p").appendChild(btnAction).click();
         window.close();
 
       let redirectInterval = setInterval(() => {
