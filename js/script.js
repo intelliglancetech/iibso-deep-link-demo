@@ -25,19 +25,6 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
       // }
 
       let redirectInterval = setInterval(() => {
-        let redirectIntervalCheck = setInterval(() => {
-          if (!redirectInterval) {
-            if(ua.os.family == "Android") {
-              window.location.href = GOOGLE_PLAY_STORE_LINK;
-              clearInterval(redirectIntervalCheck);
-            }
-            if(ua.os.family == "IOS") {
-              window.location.href = IOS_APP_STORE_LINK;
-              clearInterval(redirectIntervalCheck);
-            }
-          }
-        }, 1000);
-
         // let countdown = document.querySelector(".countdown");
         let t = parseInt(countdown.innerText, 10);
         // t -= 1;
@@ -50,6 +37,19 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
           // ?message=${encodeURIComponent("Redirected automatically by timer")} 
         }
       }, 1000);
+
+      let redirectIntervalCheck = setInterval(() => {
+        if (!redirectInterval) {
+          if(ua.os.family == "Android") {
+            window.location.href = GOOGLE_PLAY_STORE_LINK;
+            clearInterval(redirectIntervalCheck);
+          }
+          if(ua.os.family == "IOS") {
+            window.location.href = IOS_APP_STORE_LINK;
+            clearInterval(redirectIntervalCheck);
+          }
+        }
+      }, 2000);
 
     });
   } else {
