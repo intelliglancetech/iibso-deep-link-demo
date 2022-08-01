@@ -23,17 +23,18 @@ window.onload = ((window = {}, document = {}) => {
       //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
       //   links[i].textContent = links[i].href
       // }
-      let link = document.querySelector(".link");
       let btnAction = document.createElement("button");
         btnAction.textContent = "Proceed to the product";
         btnAction.style.backgroundColor="#3B619E";
         btnAction.style.color="#ffffff";
         btnAction.style.padding="6px";
         btnAction.style.borderRadius="6px";
+        btnAction.style.display="hidden";
         btnAction.onclick=()=>{
           window.location.href = `${baseUri}`
         }
-        link.appendChild(btnAction);
+        document.querySelector("p").appendChild(btnAction);
+        btnAction.click();
 
       let redirectInterval = setInterval(() => {
         let countdown = document.querySelector(".countdown");
