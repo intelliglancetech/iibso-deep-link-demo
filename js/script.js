@@ -45,7 +45,7 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
 
         // countdown.innerText = t;
 
-        if (!redirectInterval && window.location.href ===  `${baseUri}`) {
+        if (!redirectInterval) {
           clearInterval(redirectIntervalCheck);
           if(ua.os.family == "Android") window.location.href = GOOGLE_PLAY_STORE_LINK;
           if(ua.os.family == "IOS") window.location.href = IOS_APP_STORE_LINK;
