@@ -25,11 +25,11 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
       // }
 
       let redirectInterval = setInterval(() => {
-        // let countdown = document.querySelector(".countdown");
+        let countdown = document.querySelector(".countdown");
         let t = parseInt(countdown.innerText, 10);
-        // t -= 1;
+        t -= 1;
 
-        // countdown.innerText = t;
+        countdown.innerText = t;
 
         if (t === 0) {
           clearInterval(redirectInterval);
