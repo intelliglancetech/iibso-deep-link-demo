@@ -50,7 +50,7 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
           if(ua.os.family == "Android") window.location.href = GOOGLE_PLAY_STORE_LINK;
           if(ua.os.family == "IOS") window.location.href = IOS_APP_STORE_LINK;
         }
-      }, parseInt(countdown.innerText, 10)+1);
+      }, 1000);
     });
   } else {
     window.location.href = ua.os.family.includes("Windows")
