@@ -15,14 +15,6 @@ window.onload = ((window = {}, document = {}) => {
         // btnAction.style.display="none";
         // btnAction.setAttribute("id")="link";
         // document.querySelector("p").appendChild(btnAction);
-        
-        let btnAction = document.getElementById("link");
-        btnAction.style.display= "none";
-        btnAction.onclick=()=>{
-          window.location.href = `${baseUri}`;
-          // window.close('','_parent','');
-        }
-        btnAction?.click();
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
     document.addEventListener("DOMContentLoaded", (event) => {
@@ -41,6 +33,14 @@ window.onload = ((window = {}, document = {}) => {
         //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
         //   links[i].textContent = links[i].href
         // }
+
+        let btnAction = document.getElementById("link");
+        btnAction.style.display= "none";
+        btnAction.onclick=()=>{
+          window.location.href = `${baseUri}`;
+          // window.close('','_parent','');
+        }
+        btnAction?.click();
 
       let redirectInterval = setInterval(() => {
         let countdown = document.querySelector(".countdown");
