@@ -33,22 +33,17 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
 
         if (t === 0) {
           clearInterval(redirectInterval);
-          window.location.href = `${baseUri}`
-          // ?message=${encodeURIComponent("Redirected automatically by timer")} 
-        }
-      }, 1000);
-
-      setTimeout(() => {
-        if (!redirectInterval) {
-          let ua = detect.parse(navigator.userAgent);
+          // ?message=${encodeURIComponent("Redirected automatically by timer")}
           if(ua.os.family == "Android") {
             window.location.href = GOOGLE_PLAY_STORE_LINK;
           }
           if(ua.os.family == "IOS") {
             window.location.href = IOS_APP_STORE_LINK;
-          }
+          } 
+        }else{
+          window.location.href = `${baseUri}`
         }
-      }, 1500);
+      }, 1000);
 
     });
   } else {
