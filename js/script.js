@@ -19,12 +19,12 @@ window.onload = () => {
   let btnAction = document.getElementById("link");
   btnAction.style.display = "none";
 
-  if (ua.os.family == "Android" || ua.os.family == "IOS") {
-    document.addEventListener("DOMContentLoaded", (event) => {
+  document.addEventListener("DOMContentLoaded", (event) => {
+    if (ua.os.family == "Android" || ua.os.family == "IOS") {
       let link = document.getElementById("link");
       link.onclick = () => {
         let baseUri;
-    
+
         let qs = decodeURIComponent(document.location.search);
         if (qs) {
           baseUri = qs.split("?linkingUri=")[1];
@@ -34,7 +34,6 @@ window.onload = () => {
       };
       link?.click();
 
-      
       // let links = document.querySelectorAll("a");
       // let baseUri = "exp://wg-qka.notbrent.app.exp.direct";
       // let baseUri;
@@ -69,12 +68,12 @@ window.onload = () => {
           }
         }
       }, 1000);
-    });
-  } else {
-    window.location.href = ua.os.family.includes("Windows")
-      ? GOOGLE_PLAY_STORE_LINK
-      : ua.os.family.includes("Mac")
-      ? IOS_APP_STORE_LINK
-      : GOOGLE_PLAY_STORE_LINK;
-  }
+    } else {
+      window.location.href = ua.os.family.includes("Windows")
+        ? GOOGLE_PLAY_STORE_LINK
+        : ua.os.family.includes("Mac")
+        ? IOS_APP_STORE_LINK
+        : GOOGLE_PLAY_STORE_LINK;
+    }
+  });
 };
