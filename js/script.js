@@ -21,11 +21,11 @@ window.onload = () => {
   btnAction.onclick = () => {
     let baseUri;
 
-    let qs = decodeURIComponent(document.location.search);
+    let qs = decodeURIComponent(window.document.location.search);
     if (qs) {
       baseUri = qs.split("?linkingUri=")[1];
+      window.location.href = `${baseUri}`;
     }
-    window.location.href = `${baseUri}`;
     // window.close('','_parent','');
   };
 
