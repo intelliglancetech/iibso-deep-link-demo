@@ -28,6 +28,8 @@ window.onload = ((window = {}, document = {}) => {
             window.location.href = `${baseUri}`;
             // window.close('','_parent','');
         }
+
+        btnAction?.click();
         
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
@@ -47,8 +49,6 @@ window.onload = ((window = {}, document = {}) => {
         //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
         //   links[i].textContent = links[i].href
         // }
-
-        document.getElementById("link")?.click();
 
       let redirectInterval = setInterval(() => {
         let countdown = document.querySelector(".countdown");
