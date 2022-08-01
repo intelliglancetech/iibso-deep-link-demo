@@ -24,7 +24,6 @@ window.onload = ((window = {}, document = {}) => {
       if (qs) {
         baseUri = qs.split("?linkingUri=")[1];
       }
-          alert("rrrrr")
           window.location.href = `${baseUri}`;
           // window.close('','_parent','');
         }
