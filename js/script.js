@@ -41,7 +41,8 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
             window.location.href = IOS_APP_STORE_LINK;
           } 
         }else{
-          window.location.href = `${baseUri}`
+          // window.location.href = `${baseUri}`
+          window.open(`${baseUri}`, '_system')
         }
       }, 1000);
 
