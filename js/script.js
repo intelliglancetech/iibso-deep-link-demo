@@ -38,15 +38,14 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
         }
       }, 1000);
 
-      let redirectIntervalCheck = setTimeout(() => {
+      setTimeout(() => {
         if (!redirectInterval) {
+          let ua = detect.parse(navigator.userAgent);
           if(ua.os.family == "Android") {
             window.location.href = GOOGLE_PLAY_STORE_LINK;
-            clearTimeout(redirectIntervalCheck);
           }
           if(ua.os.family == "IOS") {
             window.location.href = IOS_APP_STORE_LINK;
-            clearTimeout(redirectIntervalCheck);
           }
         }
       }, 1500);
