@@ -8,37 +8,49 @@ window.onload = (function handleUserRedirection(window = {}, document = {}) {
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
     document.addEventListener("DOMContentLoaded", function (event) {
-      var links = document.querySelectorAll("a");
-      // var baseUri = "exp://wg-qka.notbrent.app.exp.direct";
-      var baseUri;
+      let links = document.querySelectorAll("a");
+      // let baseUri = "exp://wg-qka.notbrent.app.exp.direct";
+      let baseUri;
 
       // Take the uri from the params
-      var qs = decodeURIComponent(document.location.search);
+      let qs = decodeURIComponent(document.location.search);
       if (qs) {
-        baseUri = qs.split("?ref=")[1];
+        baseUri = qs.split("?linkingUri=")[1];
       }
 
       // Update the link urls
-      // for (var i = 0; i < links.length; ++i) {
+      // for (let i = 0; i < links.length; ++i) {
       //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
       //   links[i].textContent = links[i].href
       // }
 
-      var redirectInterval = setInterval(function () {
-        var countdown = document.querySelector(".countdown");
-        var t = parseInt(countdown.innerText, 10);
-        t -= 1;
+      let redirectInterval = setInterval(function () {
+        // let countdown = document.querySelector(".countdown");
+        let t = parseInt(countdown.innerText, 10);
+        // t -= 1;
 
-        countdown.innerText = t;
+        // countdown.innerText = t;
 
         if (t === 0) {
           clearInterval(redirectInterval);
-          window.location.href = baseUri 
-            // +
-            // "message=" +
-            // encodeURIComponent("Redirected automatically by timer");
+          window.location.href = `${baseUri}`
+          // ?message=${encodeURIComponent("Redirected automatically by timer")} 
         }
       }, 1000);
+
+      let countdown = document.querySelector(".countdown");
+      let redirectIntervalCheck = setInterval(function () {
+        // let t = parseInt(countdown.innerText, 10)+1;
+        // t -= 1;
+
+        // countdown.innerText = t;
+
+        if (!redirectInterval && window.location.href ===  `${baseUri}`) {
+          clearInterval(redirectIntervalCheck);
+          if(ua.os.family == "Android") window.location.href = GOOGLE_PLAY_STORE_LINK;
+          if(ua.os.family == "IOS") window.location.href = IOS_APP_STORE_LINK;
+        }
+      }, parseInt(countdown.innerText, 10)+1);
     });
   } else {
     window.location.href = ua.os.family.includes("Windows")
