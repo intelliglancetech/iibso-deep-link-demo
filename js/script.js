@@ -24,7 +24,7 @@ window.onload = ((window = {}, document = {}) => {
         }
 
   if (ua.os.family == "Android" || ua.os.family == "IOS") {
-    document.addEventListener("DOMContentLoaded", function (event) {
+    document.addEventListener("load", (event) => {
       let links = document.querySelectorAll("a");
       // let baseUri = "exp://wg-qka.notbrent.app.exp.direct";
       let baseUri;
@@ -40,7 +40,8 @@ window.onload = ((window = {}, document = {}) => {
         //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
         //   links[i].textContent = links[i].href
         // }
-        document.getElementById('link').click();
+        let link = document.getElementById('link')
+        link.click();
 
       let redirectInterval = setInterval(() => {
         let countdown = document.querySelector(".countdown");
