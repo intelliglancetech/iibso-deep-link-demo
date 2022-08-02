@@ -19,7 +19,7 @@ window.onload = () => {
   let btnAction = document.getElementById("link");
   btnAction.style.display = "none";
   btnAction.onclick = () => {
-    // let baseUri;
+    let baseUri;
     // let qs = decodeURIComponent(window.location.href);
     // if (qs) {
       baseUri = window.location.href.split("?linkingUri=")[1];
