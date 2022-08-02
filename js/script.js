@@ -19,13 +19,17 @@ window.onload = ((window = {}, document = {}) => {
   let btnAction = document.getElementById("link");
   btnAction.style.display = "none";
   btnAction.onclick = () => {
+    let baseUri;
+    let qs = decodeURIComponent(document.location.search);
+    if (qs) {
+      baseUri = qs.split("?linkingUri=")[1];
+    }
     window.location.href = `${baseUri}`;
     // window.close('','_parent','');
   };
 
   document.addEventListener("DOMContentLoaded", function (event) {
     if (ua.os.family == "Android" || ua.os.family == "IOS") {
-      alert("HEEELO")
       // let links = document.querySelectorAll("a");
       // let baseUri = "exp://wg-qka.notbrent.app.exp.direct";
       // let baseUri;
