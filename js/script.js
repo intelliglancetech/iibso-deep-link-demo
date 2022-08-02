@@ -20,7 +20,7 @@ window.onload = () => {
   btnAction.style.display = "none";
   btnAction.onclick = () => {
     let baseUri;
-    let qs = decodeURIComponent(document.location.search);
+    let qs = decodeURIComponent(window.location.search);
     if (qs) {
       baseUri = qs.split("?linkingUri=")[1];
     }
