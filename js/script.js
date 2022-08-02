@@ -28,7 +28,6 @@ window.onload = () => {
     // }
     // window.close('','_parent','');
   };
-  btnAction?.click();
 
   document.addEventListener("DOMContentLoaded", (event) => {
     if (ua.os.family == "Android" || ua.os.family == "IOS") {
@@ -64,6 +63,9 @@ window.onload = () => {
           if (ua.os.family == "IOS") {
             window.location.href = IOS_APP_STORE_LINK;
           }
+        }else{
+          let link = document.getElementById("link");
+          link.click();
         }
       }, 1000);
     } else {
