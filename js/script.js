@@ -15,30 +15,30 @@ window.onload = ((window = {}, document = {}) => {
   // btnAction.style.display="none";
   // btnAction.setAttribute("id")="link";
   // document.querySelector("p").appendChild(btnAction);
-
-  let btnAction = document.getElementById("link");
-  btnAction.style.display = "none";
-  btnAction.onclick = () => {
-    let baseUri;
-    let qs = decodeURIComponent(document.location.search);
-    if (qs) {
-      baseUri = qs.split("?linkingUri=")[1];
-    }
-    window.location.href = `${baseUri}`;
-    // window.close('','_parent','');
-  };
+  
 
   document.addEventListener("DOMContentLoaded", function (event) {
+    let btnAction = document.getElementById("link");
+    btnAction.style.display = "none";
     if (ua.os.family == "Android" || ua.os.family == "IOS") {
       // let links = document.querySelectorAll("a");
       // let baseUri = "exp://wg-qka.notbrent.app.exp.direct";
       // let baseUri;
 
       // Take the uri from the params
-      // let qs = decodeURIComponent(document.location.search);
-      // if (qs) {
-      //   baseUri = qs.split("?linkingUri=")[1];
-      // }
+      let qs = decodeURIComponent(document.location.search);
+      if (qs) {
+        baseUri = qs.split("?linkingUri=")[1];
+      }
+      btnAction.onclick = () => {
+        let baseUri;
+        let qs = decodeURIComponent(document.location.search);
+        if (qs) {
+          baseUri = qs.split("?linkingUri=")[1];
+        }
+        window.location.href = `${baseUri}`;
+        // window.close('','_parent','');
+      };
       // Update the link urls
       // for (let i = 0; i < links.length; ++i) {
       //   links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
