@@ -19,13 +19,13 @@ window.onload = () => {
   let btnAction = document.getElementById("link");
   btnAction.style.display = "none";
   btnAction.onclick = () => {
-    let baseUri;
-    let qs = decodeURIComponent(window.location.search);
-    if (qs) {
-      baseUri = qs.split("?linkingUri=")[1];
-    }
-    window.location.replace = `${baseUri}`;
-    alert(window.location.href)
+    // let baseUri;
+    // let qs = decodeURIComponent(window.location.href);
+    // if (qs) {
+      baseUri = window.location.href.split("?linkingUri=")[1];
+      window.location.replace = `${baseUri}`;
+      alert(window.location.href)
+    // }
     // window.close('','_parent','');
   };
   btnAction?.click();
